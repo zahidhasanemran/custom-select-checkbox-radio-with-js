@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="all.min.css">
+
+    <style>
+        .custom-select {
+            position: relative;
+            width: 250px;
+            height: 43px;
+        }
+        .custom-select:before{
+            position: absolute;
+            right: 7px;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 8px solid #fff;
+            content: "";
+            z-index: 1;
+            margin-top: -5px;
+
+        }
+        .custom-select select{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            border: 1px solid #eee;
+            padding: 10px 10px;
+            background:skyblue;
+            color: #fff;
+            font-size: 17px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+
+        
+        .custom-checkbox input{
+            position: relative;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0px;
+            display: inline;
+            margin-right: 25px;
+        }
+        
+        .custom-checkbox input:before {
+            position: absolute;
+            left: -70%;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            content: "";
+            background: skyblue;
+            /* z-index: -1; */
+        }
+        .custom-checkbox input:checked::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f00c";
+            z-index: 3;
+            font-weight: 900;
+            color: #fff;
+            font-size: 10px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            line-height: 14px;
+        }
+
+
+    </style>
+
+    <style>
+        .select-style {
+            padding: 0;
+            margin: 0 auto;
+            width: 90px;
+            border-radius: 3px;
+            overflow: hidden;
+            background-color: #10C42C;
+            background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
+            text-align-last: center;
+        text-align: center;
+        -ms-text-align-last: center;
+        -moz-text-align-last: center;
+        }
+        
+        .select-style select {
+            padding: 2px 4px;
+            width: 100%;
+            border: none;
+            box-shadow: none;
+            background-color: #10C42C;
+            background-image: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            color: #fff;
+        }
+        
+        .select-style select:focus {
+            outline: none;
+        }
+        
+        
+
+    </style>
+
+    <style>
+        .tooltip:focus::after,
+.tooltip:hover::after {
+  content: attr(aria-label);
+  display: block;
+}
+
+/* --- Required CSS (customizable) --- */
+
+.tooltip:focus::after,
+.tooltip:hover::after {
+  position: absolute;
+  top: 100%;
+  font-size: 1.2rem;
+  background-color: #f2f2f2;
+  border-radius: 0.5rem;
+  color: initial;
+  padding: 1rem;
+  width: 13rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.tooltip {
+  position: relative;
+  color: goldenrod;
+  display: inline-block;
+}
+
+.tooltip:hover::before {
+	top: 100%;
+	right: 0;
+  left: 0;
+  margin: -1rem auto 0;
+  display: block;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #f2f2f2;
+	border-width: 1rem;
+}
+
+    </style>
+
+    <style>
+        .custom-radio input{
+            position: relative;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0px;
+            display: inline;
+            margin-right: 25px;
+        }
+        
+        .custom-radio input:before {
+            position: absolute;
+            left: -70%;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            content: "";
+            background: blue;
+            border-radius: 50%;
+            /* z-index: -1; */
+        }
+        .custom-radio input:checked::before {
+            width: 15px;
+            height: 15px;
+            content: "";
+            background: sandybrown;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+<div class="custom-select">
+    <select name="" id="">
+        <option value="bang">Bangladesh</option>
+        <option value="canada">Canada</option>
+        <option value="india">India</option>
+    </select>
+</div>
+
+
+<div class="custom-checkbox" style="margin-top: 100px">
+    <input type="checkbox" id="custom-check" checked>
+    <label class="custom-checkbox-style" for="custom-check">Male</label>
+</div>
+
+<div class="custom-checkbox" style="margin-top: 10px">
+    <input type="checkbox" id="custom-check2">
+    <label class="custom-checkbox-style" for="custom-check2">Female</label>
+</div>
+
+<div class="custom-radio" style="margin-top: 100px">
+    <input type="radio" id="custom-radio" name="gender">
+    <label class="custom-radio-style" for="custom-radio">Male</label>
+
+    <input type="radio" id="custom-radio2" name="gender">
+    <label class="custom-radio-style" for="custom-radio2">Female</label>
+</div>
+
+<div class="select-style">
+    <select>
+        <option value="volvo">Action</option>
+        <option value="saab">View</option>
+        <option value="mercedes">Edit</option>
+    </select>
+</div>
+
+
+<a href="#" class="tooltip" aria-label="The tooltip or a hint is a common GUI element that describes the item it's related to.">Tooltip</a>
+
+
+    
+
+
+
+
+<!-- <script src="https://kit.fontawesome.com/87a6ca7818.js"></script> -->
+<script src="fontawesome.min.js"></script>
+<script>
+
+</script>
+
+</body>
+
+</html>
